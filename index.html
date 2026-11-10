@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="SPORTS-OFFICIAL007 - Your destination for cricket, football and sports stories.">
+<title>SPORTS-OFFICIAL007 | Beyond The Game</title>
+
+<style>
+:root {
+  --gold: #d4af37;
+  --black: #080808;
+  --panel: #141414;
+  --muted: #aaa;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background:var(--black);
+  color:white;
+  font-family:Arial, sans-serif;
+}
+a { color:inherit; text-decoration:none; }
+header {
+  background:#0d0d0d;
+  border-bottom:1px solid #302717;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.nav {
+  max-width:1200px;
+  margin:auto;
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo {
+  color:var(--gold);
+  font-size:21px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+nav { display:flex; gap:22px; }
+nav a { font-size:13px; color:#ddd; }
+nav a:hover { color:var(--gold); }
+.menu { display:none; }
+.hero {
+  min-height:520px;
+  padding:100px 7%;
+  display:flex;
+  align-items:center;
+  background:
+  linear-gradient(90deg,#080808 10%,#080808dd 48%,#08080855),
+  url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1800&q=85') center/cover;
+}
+.hero-content { max-width:680px; }
+.tag {
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+.hero h1 {
+  font-size:clamp(40px,7vw,76px);
+  margin:20px 0;
+  line-height:1.05;
+}
+.hero h1 span { color:var(--gold); }
+.hero p { color:#ccc; line-height:1.8; max-width:530px; }
+.btn {
+  display:inline-block;
+  background:var(--gold);
+  color:#111;
+  padding:14px 24px;
+  margin-top:28px;
+  font-weight:bold;
+  border-radius:3px;
+}
+section { padding:65px 7%; }
+.section-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+  gap:12px;
+}
+.section-head h2 { font-size:27px; }
+.section-head span { color:var(--gold); }
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.card {
+  background:var(--panel);
+  border:1px solid #292929;
+  overflow:hidden;
+  transition:.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+  border-color:var(--gold);
+}
+.card img {
+  width:100%;
+  height:205px;
+  object-fit:cover;
+  display:block;
+}
+.card-content { padding:20px; }
+.category {
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+.card h3 { margin:12px 0; font-size:19px; }
+.card p { color:var(--muted); font-size:13px; line-height:1.7; }
+.card a {
+  display:inline-block;
+  color:var(--gold);
+  margin-top:18px;
+  font-size:13px;
+  font-weight:bold;
+}
+.dark-section { background:#101010; }
+.sports-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+.sport {
+  min-height:250px;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  isolation:isolate;
+}
+.sport::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent,#000e);
+  z-index:-1;
+}
+.sport h3 { font-size:32px; color:var(--gold); }
+.sport p { color:#ddd; margin-top:8px; }
+.video-box {
+  background:var(--panel);
+  border:1px solid #333;
+  padding:35px;
+  text-align:center;
+}
+.video-box h3 { color:var(--gold); margin-bottom:12px; }
+.video-box p { color:var(--muted); line-height:1.7; }
+.video-box a { margin-top:20px; }
+.about {
+  text-align:center;
+  max-width:750px;
+  margin:auto;
+}
+.about h2 { font-size:30px; margin-bottom:20px; }
+.about h2 span { color:var(--gold); }
+.about p { color:var(--muted); line-height:1.9; }
+footer {
+  background:#050505;
+  border-top:1px solid #302717;
+  text-align:center;
+  padding:35px 15px;
+}
+footer h3 { color:var(--gold); margin-bottom:12px; }
+footer p { color:#888; font-size:12px; line-height:2; }
+footer a { color:var(--gold); }
+
+@media(max-width:700px) {
+  .nav { flex-wrap:wrap; }
+  .logo { font-size:17px; }
+  nav {
+    width:100%;
+    overflow-x:auto;
+    padding-top:17px;
+    gap:20px;
+  }
+  nav a { white-space:nowrap; }
+  .hero { min-height:430px; padding:65px 7%; }
+  .cards { grid-template-columns:1fr; }
+  .sports-grid { grid-template-columns:1fr; }
+  section { padding:48px 6%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#home">SPORTS-OFFICIAL007</a>
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#stories">STORIES</a>
+      <a href="#sports">SPORTS</a>
+      <a href="#videos">VIDEOS</a>
+      <a href="#about">ABOUT</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">THE WORLD OF SPORTS</div>
+    <h1>BEYOND<br>THE <span>GAME.</span></h1>
+    <p>
+      From legendary cricket moments to unforgettable
+      football stories. Discover the passion, history,
+      records and personalities that define sports.
+    </p>
+    <a href="#stories" class="btn">EXPLORE STORIES →</a>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="section-head">
+    <h2>FEATURED <span>STORIES</span></h2>
+    <span>01 / EDITORIAL</span>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800" alt="Cricket stadium">
+      <div class="card-content">
+        <div class="category">CRICKET</div>
+        <h3>The Art of Batting</h3>
+        <p>Explore the skills, mindset and moments behind great batting performances.</p>
+        <a href="#sports">EXPLORE →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800" alt="Football stadium">
+      <div class="card-content">
+        <div class="category">FOOTBALL</div>
+        <h3>Legends of Football</h3>
+        <p>Discover the players whose performances have shaped football history.</p>
+        <a href="#sports">EXPLORE →</a>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800" alt="Athletics">
+      <div class="card-content">
+        <div class="category">SPORTS HISTORY</div>
+        <h3>Moments That Made History</h3>
+        <p>Relive the extraordinary achievements that inspired sports fans worldwide.</p>
+        <a href="#about">EXPLORE →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="dark-section" id="sports">
+  <div class="section-head">
+    <h2>EXPLORE <span>SPORTS</span></h2>
+  </div>
+
+  <div class="sports-grid">
+    <a class="sport" href="#stories"
+      style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=900')">
+      <h3>CRICKET</h3>
+      <p>Records. Legends. Rivalries. Passion.</p>
+    </a>
+
+    <a class="sport" href="#stories"
+      style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=900')">
+      <h3>FOOTBALL</h3>
+      <p>Goals. Greatness. History. Glory.</p>
+    </a>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="section-head">
+    <h2>OUR <span>VIDEOS</span></h2>
+  </div>
+  <div class="video-box">
+    <h3>SPORTS-OFFICIAL007 ON YOUTUBE</h3>
+    <p>Watch our latest sports edits, player stories and exciting Shorts.</p>
+    <!-- Replace # with your YouTube channel URL -->
+    <a class="btn" href="#" target="_blank">VISIT YOUTUBE CHANNEL →</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <h2>MORE THAN <span>JUST SPORTS.</span></h2>
+    <p>
+      SPORTS-OFFICIAL007 is a sports media brand
+      dedicated to celebrating cricket, football and
+      the greatest moments in sporting history.
+      Our mission is to bring fans closer to the
+      stories behind the game.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <h3>SPORTS-OFFICIAL007</h3>
+  <p>BEYOND THE GAME. BEYOND THE LIMITS.</p>
+  <p>Cricket | Football | Sports History</p>
+  <p>Collaboration: Add your official email here</p>
+  <p>© 2026 SPORTS-OFFICIAL007. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
